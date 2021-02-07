@@ -63,6 +63,10 @@ TORCH_API bool hasBackendPreprocessFunction(const std::string& name);
 TORCH_API BackendPreprocessFunction
 getBackendPreprocessFunction(const std::string& name);
 
+TORCH_API Module codegen_backend_module(const std::string& backend_name,
+                              const Module& orig_module,
+                              const c10::Dict<IValue, IValue>& method_compile_spec,
+                              c10::DictTypePtr any_dict_ty);
 } // namespace detail
 } // namespace jit
 } // namespace torch
